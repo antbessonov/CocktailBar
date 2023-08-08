@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/navigation_my_cocktails">
+
+    <fragment
+        android:id="@+id/navigation_my_cocktails"
+        android:name="org.bessonov.cocktailbar.fragment.MyCocktailsFragment"
+        android:label="MyCocktailsFragment"
+        tools:layout="@layout/fragment_my_cocktails">
+        <action
+            android:id="@+id/action_navigation_my_cocktails_to_navigation_add_cocktail"
+            app:destination="@id/navigation_add_cocktail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_add_cocktail"
+        android:name="org.bessonov.cocktailbar.fragment.AddCocktailFragment"
+        android:label="AddCocktailFragment"
+        tools:layout="@layout/fragment_add_cocktail">
+        <action
+            android:id="@+id/action_navigation_add_cocktail_to_navigation_my_cocktails"
+            app:destination="@id/navigation_my_cocktails"
+            app:popUpTo="@id/navigation_my_cocktails"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_navigation_add_cocktail_to_navigation_add_ingredient"
+            app:destination="@id/navigation_add_ingredient" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/navigation_add_ingredient"
+        android:name="org.bessonov.cocktailbar.fragment.AddIngredientDialogFragment"
+        android:label="AddIngredientDialogFragment"
+        tools:layout="@layout/fragment_dialog_add_ingredient" />
+
+</navigation>
