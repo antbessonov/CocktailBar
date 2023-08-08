@@ -3,7 +3,6 @@ package org.bessonov.cocktailbar.data.database
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 import org.bessonov.cocktailbar.data.database.model.CocktailDbModel
-import org.bessonov.cocktailbar.domain.model.Cocktail
 
 @Dao
 interface CocktailDao {
@@ -15,7 +14,7 @@ interface CocktailDao {
     fun get(title: String): Flow<CocktailDbModel>
 
     @Update
-    suspend fun update(cocktail: Cocktail)
+    suspend fun update(cocktailDbModel: CocktailDbModel)
 
     @Query("DELETE FROM cocktails WHERE title == :title")
     suspend fun delete(title: String)

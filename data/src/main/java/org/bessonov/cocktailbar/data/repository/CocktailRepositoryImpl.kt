@@ -22,7 +22,7 @@ class CocktailRepositoryImpl(
     }
 
     override suspend fun update(cocktail: Cocktail) {
-        cocktailDao.update(cocktail = cocktail)
+        cocktailDao.update(cocktailDbModel = cocktailMapper.mapEntityToDbModel(entity = cocktail))
     }
 
     override suspend fun delete(title: String) {
