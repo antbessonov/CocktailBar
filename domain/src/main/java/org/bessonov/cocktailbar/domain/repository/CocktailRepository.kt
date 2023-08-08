@@ -11,5 +11,7 @@ interface CocktailRepository {
 
     suspend fun update(cocktail: Cocktail)
 
+    suspend fun delete(title: String)
+
     fun getList(): Flow<List<Cocktail>>
 }
