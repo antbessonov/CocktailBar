@@ -13,6 +13,7 @@ class CocktailMapper {
     fun mapEntityToDbModel(entity: Cocktail): CocktailDbModel {
         return CocktailDbModel(
             title = entity.title,
+            ingredientList = entity.ingredientList,
             description = entity.description,
             recipe = entity.recipe
         )
@@ -21,6 +22,7 @@ class CocktailMapper {
     fun mapDbModelToEntity(dbModel: CocktailDbModel): Cocktail {
         return Cocktail(
             title = dbModel.title,
+            ingredientList = dbModel.ingredientList,
             description = dbModel.description,
             recipe = dbModel.recipe
         )

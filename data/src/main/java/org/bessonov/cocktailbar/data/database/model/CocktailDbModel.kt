@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey
 data class CocktailDbModel(
     @PrimaryKey
     val title: String,
+    val ingredientList: String,
     val description: String?,
     val recipe: String?
 )
