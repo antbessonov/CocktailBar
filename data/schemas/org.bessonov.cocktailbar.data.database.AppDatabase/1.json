@@ -2,15 +2,21 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "77b4b0184621152c3e2948281a87e1a3",
+    "identityHash": "99ff917b225ccc7590819d0f4998d448",
     "entities": [
       {
         "tableName": "cocktails",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`title` TEXT NOT NULL, `description` TEXT, `recipe` TEXT, PRIMARY KEY(`title`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`title` TEXT NOT NULL, `ingredientList` TEXT NOT NULL, `description` TEXT, `recipe` TEXT, PRIMARY KEY(`title`))",
         "fields": [
           {
             "fieldPath": "title",
             "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ingredientList",
+            "columnName": "ingredientList",
             "affinity": "TEXT",
             "notNull": true
           },
@@ -40,7 +46,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '77b4b0184621152c3e2948281a87e1a3')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '99ff917b225ccc7590819d0f4998d448')"
     ]
   }
 }
