@@ -7,6 +7,7 @@ import dagger.hilt.components.SingletonComponent
 import org.bessonov.cocktailbar.data.database.CocktailDao
 import org.bessonov.cocktailbar.data.mapper.CocktailMapper
 import org.bessonov.cocktailbar.data.repository.CocktailRepositoryImpl
+import org.bessonov.cocktailbar.domain.repository.CocktailRepository
 import javax.inject.Singleton
 
 @Module
@@ -24,7 +25,7 @@ object DataModule {
     fun provideCocktailRepositoryImpl(
         cocktailDao: CocktailDao,
         cocktailMapper: CocktailMapper
-    ): CocktailRepositoryImpl {
+    ): CocktailRepository {
         return CocktailRepositoryImpl(
             cocktailDao = cocktailDao,
             cocktailMapper = cocktailMapper

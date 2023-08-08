@@ -20,7 +20,6 @@ object DatabaseModule {
         application: Application
     ): AppDatabase {
         return Room.databaseBuilder(application, AppDatabase::class.java, DB_NAME)
-            .createFromAsset("initial_cocktail_bar")
             .build()
     }
 
